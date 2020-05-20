@@ -1,38 +1,38 @@
 <script type="text/discourse-plugin" version="0.8">
-    try {
-      groups = api.getCurrentUser().groups.map(g => g.name);
-      // const allowed_groups = ['admins', 'moderators', 'staff', 'TEAP']
-      const allowed_groups = settings.ozone_can_reply_to_comments.split("|")
-      if (!groups.some(g=> allowed_groups.includes(g))) {
-        // these users are not allowed to reply to comments
-        $(document).ready(hide_reply_buttons);
+	try {
+		groups = api.getCurrentUser().groups.map(g => g.name);
+		// const allowed_groups = ['admins', 'moderators', 'staff', 'TEAP']
+		const allowed_groups = settings.ozone_can_reply_to_comments.split("|")
+		if (!groups.some(g=> allowed_groups.includes(g))) {
+			// these users are not allowed to reply to comments
+			$(document).ready(hide_reply_buttons);
 
-        api.onPageChange(url =>{
-            handler = install_handler();
-          // if url matches */t/*
-          if (url.match(/^\/t\//)) {
-              // this is a topic page
-            install_handler();
-          } else {
-              // if not a topic page, unbind the ajaxSuccess handler
-            $(document).unbind("ajaxSuccess", handler);
-          }
-        });
+			api.onPageChange(url =>{
+				handler = install_handler();
+				// if url matches */t/*
+				if (url.match(/^\/t\//)) {
+					// this is a topic page
+					install_handler();
+				} else {
+					// if not a topic page, unbind the ajaxSuccess handler
+					$(document).unbind("ajaxSuccess", handler);
+				}
+			});
 
-        function install_handler() {
-          $(document).ajaxSuccess(function() {
-            // do stuff
-            hide_reply_buttons();
-          });
-        }
+			function install_handler() {
+				$(document).ajaxSuccess(function() {
+					// do stuff
+					hide_reply_buttons();
+				});
+			}
 
-        function hide_reply_buttons() {
-        console.log("hiding reply buttons");
-        $("button.reply.create:not(:first)").hide()
-            $("button.show-more-actions:not(:first)").hide()
-        }
-      }
-    } catch(err) {
-        console.log(err)
-    }
+			function hide_reply_buttons() {
+				console.log("hiding reply buttons");
+				$("button.reply.create:not(:first)").hide()
+				$("button.show-more-actions:not(:first)").hide()
+			}
+		}
+	} catch(err) {
+		console.log(err)
+	}
 </script>
