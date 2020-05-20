@@ -1,8 +1,8 @@
 <script type="text/discourse-plugin" version="0.8">
     try {
       groups = api.getCurrentUser().groups.map(g => g.name);
-      // console.log(groups)
-      const allowed_groups = ['admins', 'moderators', 'staff', 'TEAP']
+      // const allowed_groups = ['admins', 'moderators', 'staff', 'TEAP']
+      const allowed_groups = settings.ozone_can_reply_to_comments.split("|")
       if (!groups.some(g=> allowed_groups.includes(g))) {
         // these users are not allowed to reply to comments
         $(document).ready(function(){
