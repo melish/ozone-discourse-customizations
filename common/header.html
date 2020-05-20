@@ -1,0 +1,14 @@
+<script type="text/discourse-plugin" version="0.8">
+    try {
+      groups = api.getCurrentUser().groups.map(g => g.name);
+      // console.log(groups)
+      const allowed_groups = ['admins', 'moderators', 'staff', 'TEAP']
+      if (!groups.some(g=> allowed_groups.includes(g))) {
+        // these users are not allowed to reply to comments
+        $(document).ready(function(){
+            $("button.reply.create:not(:first)").hide()
+            $("button.show-more-actions:not(:first)").hide()
+        });
+      }
+    } catch(err) {}
+</script>

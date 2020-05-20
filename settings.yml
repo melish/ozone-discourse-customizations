@@ -1,0 +1,4 @@
+ozone_can_reply_to_comments:
+  default: admins|staff|TEAP|moderators
+  type: list
+  description: "Groups which can reply to comments"
