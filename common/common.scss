@@ -11,3 +11,79 @@ img.avatar { border-radius: 0; }
 span.second.username {
     display: none;
 }
+
+
+#cat-page-only {
+    display: none;
+}
+
+body.category-OEWG42 #cat-page-only {
+    display: block;
+}
+
+
+body.category-OEWG42 #list-area, body.category-OEWG42 .list-controls {
+    display: none;
+}
+
+.topic-list .default, .topic-list .posts, .topic-list .views, .topic-list .activity {
+    display:none;
+}
+
+.list-controls .nav {
+    display:none;
+}
+
+
+.category-boxes h3 {
+    color: #1F8FED;
+    font-size: 19px;
+    font-weight: 300;
+}
+
+.b-header {
+  background-color: #1F8FED;
+}
+
+.topic-list-bottom {
+    display:none;
+}
+
+body {
+    font-size: 18px;
+}
+
+.d-header #site-logo {
+    height: 65px;
+}
+
+.d-header {
+    height: 95px;
+}
+
+body .banner-box {
+    margin-top: -0.5em;
+}
+
+.login-required h2, #topic-title h1 a {
+    font-size: 30px;
+    font-weight: 300;
+    color: #4d4d4d !important;
+}
+
+.login-required h2 a {
+    color: #4d4d4d !important;
+}
+
+#ember42 #login-buttons {
+    display:none;
+}
+
+.like, .share {
+    display:none !important;
+}
+
+.banner-box h2 {
+    padding-top: 50px !important;
+    font-size: 37px !important;
+}
