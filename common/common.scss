@@ -75,8 +75,8 @@ body .banner-box {
     color: #4d4d4d !important;
 }
 
-#ember42 #login-buttons {
-    display:none;
+#login-buttons {
+    display:none !important;
 }
 
 .like, .share {
@@ -86,4 +86,7 @@ body .banner-box {
 .banner-box h2 {
     padding-top: 50px !important;
     font-size: 37px !important;
+}
+.subcategories {
+    display:none;
 }
