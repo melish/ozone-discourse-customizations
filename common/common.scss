@@ -14,22 +14,22 @@ span.second.username {
 
 
 #cat-page-only {
-    display: none;
+   display: none; 
 }
-
+/* not necessary. */
 body.category-OEWG42 #cat-page-only {
-    display: block;
+    /* display: block; */
 }
 
 
 body.category-OEWG42 #list-area, body.category-OEWG42 .list-controls {
-    display: none;
+    /* display: none; */
 }
 
 .topic-list .default, .topic-list .posts, .topic-list .views, .topic-list .activity {
-    display:none;
+    /* display: none; */
 }
-
+/* not necessary.end */
 .list-controls .nav {
     display:none;
 }
@@ -61,6 +61,7 @@ body {
     height: 95px;
 }
 
+
 body .banner-box {
     margin-top: -0.5em;
 }
@@ -88,5 +89,16 @@ body .banner-box {
     font-size: 37px !important;
 }
 .subcategories {
-    display:none;
+   display:none; 
+}
+
+.topic-category {
+    display: none;
+}
+
+.ember-application .d-header {
+    margin-top: 3px;
+}
+#main-outlet {
+    padding-top: 0px;
 }
